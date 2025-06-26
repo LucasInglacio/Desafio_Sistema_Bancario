@@ -18,17 +18,17 @@ while True:
 
     opcao = input(menu)
 
-    if opcao == "d":
+    if opcao == "0":
         valor = float(input("Informe o valor do depósito: ")) # Deposito do usuario
 
         if valor > 0:
             saldo += valor # sendo maior que 0, ele adiciona no saldo
-            extrato += f"Depósito: R$ {valor:.2f}\n" # Concatena o valor da string ( formata em forma de $$)
+            extrato += f"Depósito: R$ {valor:.2f}\n" # Concatena o valor da string ( formata em forma de dinheiro)
 
         else:
             print("Operação falhou! O valor informado é inválido.") # deposito negativo
 
-    elif opcao == "s":
+    elif opcao == "1":
         valor = float(input("Informe o valor que deseja sacar: "))
 
         excedeu_saldo = valor > saldo
@@ -54,13 +54,13 @@ while True:
         else:
             print("Operação falhou! O valor informado é inválido.")
 
-    elif opcao == "e":
+    elif opcao == "2":
         print("\n================ EXTRATO ================") #Cabecario (/n pula uma linha)
         print("Não foram realizadas movimentações." if not extrato else extrato)
         print(f"\nSaldo: R$ {saldo:.2f}")
         print("==========================================")
 
-    elif opcao == "q":
+    elif opcao == "3":
         break
 
     else:
